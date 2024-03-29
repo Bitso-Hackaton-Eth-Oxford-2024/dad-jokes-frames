@@ -8,7 +8,7 @@ const frameMetadata = getFrameMetadata({
       label: 'Hit me with a Joke !',
     }
   ],
-  image: `${FRAME_BASE_URL}/dad-jokes-main.jpeg`,
+  image: `${FRAME_BASE_URL}/dadjokes-main.jpeg`,
   post_url: `${FRAME_BASE_URL}/api/joke`,
 });
 
