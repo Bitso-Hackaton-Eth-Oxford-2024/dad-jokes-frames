@@ -2,6 +2,7 @@ import { errorFrame, parseFrameRequest } from '@/app/lib/frames';
 import { FrameRequest } from '@coinbase/onchainkit';
 import { NextRequest, NextResponse } from 'next/server';
 
+
 export async function POST(req: NextRequest): Promise<Response> {
     let frameRequest: FrameRequest | undefined;
 
@@ -17,7 +18,18 @@ export async function POST(req: NextRequest): Promise<Response> {
 
     console.debug("Getting a joke request from "+fid);
     // Return good frame later
-    return new NextResponse(errorFrame);
+    return new NextResponse(`
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta property="fc:frame" content="vNext" />
+            <meta property="fc:frame:image" content="${process.env.HOST}/og?joke=What+is+going+on" />
+            <meta property="og:image" content="${process.env.HOST}/og?joke="what+is+going+on" />
+            <meta property="fc:frame:button:1" content="joke 2" />
+            <meta property="fc:frame:post_url" content="${process.env.host}/api/joke_2" />
+        </head>
+    </html>
+`);
 }
 
 export const dynamic = 'force-dynamic';

@@ -1,7 +1,7 @@
 import { getSSLHubRpcClient, Message } from '@farcaster/hub-nodejs';
 import { FrameRequest } from "@coinbase/onchainkit";
 
-export const FRAME_BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+export const FRAME_BASE_URL = process.env.HOST || 'http://localhost:3000';
 const HUB_URL = 'nemes.farcaster.xyz:2283';
 
 export const parseFrameRequest = async (request: FrameRequest) => {
