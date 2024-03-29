@@ -8,7 +8,7 @@ const frameMetadata = getFrameMetadata({
       label: 'Hit me with a Joke !',
     }
   ],
-  image: `${FRAME_BASE_URL}/dadjokes-main.jpeg`,
+  image: `${FRAME_BASE_URL}/next.svg`,
   post_url: `${FRAME_BASE_URL}/api/joke`,
 });
 
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Dad Jokes',
     description: 'Dad Jokes',
-    images: [`${FRAME_BASE_URL}/dadjokes-main.jpeg`],
+    images: [`${FRAME_BASE_URL}/next.svg`],
   },
   other: {
     ...frameMetadata,
