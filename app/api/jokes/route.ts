@@ -22,6 +22,18 @@ export async function POST(req: NextRequest): Promise<Response> {
     console.debug("Getting a joke request step 1 from "+fid);
     
 
+    const res = await fetch('https://icanhazdadjoke.com/');
+  // The return value is *not* serialized
+  // You can return Date, Map, Set, etc.
+ 
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error('Failed to fetch data');
+  }
+ 
+  const jsonJoke = res.json();
+
+  console.debug("Joke result "+jsonJoke);
     // Return good frame later
     return new NextResponse(`
     <!DOCTYPE html>
