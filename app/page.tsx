@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Dad Jokes',
     description: 'Dad Jokes',
-    images: [`${FRAME_BASE_URL}/dad-jokes-main.jpeg`],
+    images: [`${FRAME_BASE_URL}/dadjokes-main.jpeg`],
   },
   other: {
     ...frameMetadata,
