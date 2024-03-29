@@ -1,4 +1,4 @@
-import { errorFrame, parseFrameRequest, successFrame, jokeFrame } from '@/libs/farcaster';
+import { errorFrame, parseFrameRequest } from '@/app/lib/frames';
 import { FrameRequest } from '@coinbase/onchainkit';
 import { NextRequest, NextResponse } from 'next/server';
 
@@ -15,7 +15,9 @@ export async function POST(req: NextRequest): Promise<Response> {
     const {fid, isValid} = await parseFrameRequest(frameRequest);
     if (!fid || !isValid) return new NextResponse(errorFrame);
 
-    return new NextResponse(jokeFrame("How do you make an eggroll? You push it."));
+    console.debug("Getting a joke request from "+fid);
+    // Return good frame later
+    return new NextResponse(errorFrame);
 }
 
 export const dynamic = 'force-dynamic';
