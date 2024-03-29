@@ -36,7 +36,7 @@ export async function GET(request: Request) {
           >
             <path d="M37.59.25l36.95 64H.64l36.95-64z"></path>
           </svg>
-          <div style={{ marginTop: 40 }}>Hello, ${joke_hash}</div>
+          <div style={{ marginTop: 40, display: 'flex' }}>Hello, ${joke_hash}</div>
         </div>
         ),
         {
