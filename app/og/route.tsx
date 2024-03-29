@@ -3,9 +3,6 @@ import { ImageResponse } from "next/og";
 export const runtime = "experimental-edge";
 
 export async function GET(request: Request) {
-    const victorMono = await fetch(
-        new URL("/public/VictorMono-Bold.ttf", import.meta.url)
-    ).then((res) => res.arrayBuffer());
 
     const { searchParams } = new URL(request.url);
 

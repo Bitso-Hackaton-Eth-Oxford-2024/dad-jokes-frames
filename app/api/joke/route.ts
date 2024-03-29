@@ -30,7 +30,7 @@ export async function POST(req: NextRequest): Promise<Response> {
             <meta property="fc:frame:image" content="${process.env.HOST}/og?joke_hash=hashXXXX" />
             <meta property="og:image" content="${process.env.HOST}/og?joke_hash="hashXXXX" />
             <meta property="fc:frame:button:1" content="joke 2" />
-            <meta property="fc:frame:post_url" content="${process.env['HOST']}/api/joke_2" />
+            <meta property="fc:frame:post_url" content="${process.env.HOST}/api/joke_2" />
         </head>
     </html>
 `);
