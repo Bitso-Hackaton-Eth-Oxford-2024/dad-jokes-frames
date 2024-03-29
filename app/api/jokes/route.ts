@@ -28,7 +28,7 @@ export async function POST(req: NextRequest): Promise<Response> {
       }
 
       const headers = new Headers();
-      headers.set('Content-Type', 'application/json');
+      headers.set('Accept', 'application/json');
       const requestOptions = {
         method: 'GET',
         headers: headers
