@@ -27,7 +27,13 @@ export async function POST(req: NextRequest): Promise<Response> {
         status: number;
       }
 
-    const res = await fetch('https://icanhazdadjoke.com/');
+      const headers = new Headers();
+      headers.set('Content-Type', 'application/json');
+      const requestOptions = {
+        method: 'GET',
+        headers: headers
+      };
+    const res = await fetch('https://icanhazdadjoke.com/', requestOptions);
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
  
