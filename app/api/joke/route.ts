@@ -25,11 +25,11 @@ export async function POST(req: NextRequest): Promise<Response> {
     <!DOCTYPE html>
     <html>
         <head>
-            <meta property="fc:frame" content="vNext" />
-            <meta property="fc:frame:image" content="${process.env.HOST}/og?joke_hash=hashXXXX" />
-            <meta property="og:image" content="${process.env.HOST}/og?joke_hash="hashXXXX" />
-            <meta property="fc:frame:button:1" content="joke 2" />
-            <meta property="fc:frame:post_url" content="${process.env.HOST}/api/joke_2" />
+        <meta name="fc:frame" content="vNext">
+        <meta name="fc:frame:image" content="https://dad-jokes-frames.vercel.app/dadjokes-main.png">
+        <meta name="fc:frame:post_url" content="https://dad-jokes-frames.vercel.app/api/joke_2">
+        <meta name="fc:frame:button:hashxxx" content="Second Part">
+        <meta name="fc:frame:button:hashxxx:action" content="post">
         </head>
     </html>
 `);
