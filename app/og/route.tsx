@@ -26,8 +26,8 @@ export async function GET(request: Request) {
       </div>
         ),
         {
-            width: 640,
-            height: 640,
+            width: 1900,
+            height: 1000,
             fonts: [
                 {
                     name: "VictorMono",
