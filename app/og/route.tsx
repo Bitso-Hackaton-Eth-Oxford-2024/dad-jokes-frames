@@ -14,27 +14,27 @@ export async function GET(request: Request) {
     console.debug("Processing Joke with hash "+joke_hash);
 
     return new ImageResponse(
-        (
-          <div tw="flex h-[1000px] w-[1900px]">
-          <img
-              src={"https://dad-jokes-frames.vercel.app/dadjokes-main.png"}
-              tw="absolute left-0 top-0 h-[1000px]"
-          />
-          <div tw="flex flex-col w-full h-full items-center text-center justify-center">
-              <h2 tw="text-black text-[96px]">{joke_hash}</h2>
-          </div>
-      </div>
-        ),
-        {
-            width: 1900,
-            height: 1000,
-            fonts: [
-                {
-                    name: "VictorMono",
-                    data: victorMono,
-                    weight: 400,
-                },
-            ],
-        }
+      (
+        <div
+          style={{
+            fontSize: 40,
+            color: 'black',
+            background: 'white',
+            width: '100%',
+            height: '100%',
+            padding: '50px 200px',
+            textAlign: 'center',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          👋 Hello
+        </div>
+      ),
+      {
+        width: 640,
+        height: 640,
+      },
     );
+  
 }
