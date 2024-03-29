@@ -3,7 +3,9 @@ import { FrameRequest } from '@coinbase/onchainkit';
 import { NextRequest, NextResponse } from 'next/server';
 
 
-
+/**
+ *  Receive the joke request, search in the db for one and return the first part of it.
+ */
 export async function POST(req: NextRequest): Promise<Response> {
     let frameRequest: FrameRequest | undefined;
 
@@ -27,7 +29,7 @@ export async function POST(req: NextRequest): Promise<Response> {
         <head>
         <meta name="fc:frame" content="vNext">
         <meta name="fc:frame:image" content="https://dad-jokes-frames.vercel.app/dadjokes-main.png">
-        <meta name="fc:frame:post_url" content="https://dad-jokes-frames.vercel.app/api/joke/xxxx">
+        <meta name="fc:frame:post_url" content="https://dad-jokes-frames.vercel.app/api/jokes/xxxx">
         <meta name="fc:frame:button:1" content="Second Part">
         <meta name="fc:frame:button:1:action" content="post">
         </head>
