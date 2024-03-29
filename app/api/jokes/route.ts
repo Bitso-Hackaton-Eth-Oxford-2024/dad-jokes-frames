@@ -1,6 +1,7 @@
 import { errorFrame, parseFrameRequest } from '@/app/lib/frames';
 import { FrameRequest } from '@coinbase/onchainkit';
 import { NextRequest, NextResponse } from 'next/server';
+import { join } from 'path';
 
 
 /**
@@ -44,7 +45,7 @@ export async function POST(req: NextRequest): Promise<Response> {
  
   const jsonJoke: JokeData = await res.json();
 
-  console.debug("Joke result "+jsonJoke);
+  console.debug("Joke result "+jsonJoke.id+ " "+ jsonJoke.joke);
     // Return good frame later
     return new NextResponse(`
     <!DOCTYPE html>
