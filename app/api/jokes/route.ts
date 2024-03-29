@@ -21,6 +21,11 @@ export async function POST(req: NextRequest): Promise<Response> {
 
     console.debug("Getting a joke request step 1 from "+fid);
     
+    interface JokeData {
+        id: string;
+        joke: string;
+        status: number;
+      }
 
     const res = await fetch('https://icanhazdadjoke.com/');
   // The return value is *not* serialized
@@ -31,7 +36,7 @@ export async function POST(req: NextRequest): Promise<Response> {
     throw new Error('Failed to fetch data');
   }
  
-  const jsonJoke = res.json();
+  const jsonJoke: JokeData = await res.json();
 
   console.debug("Joke result "+jsonJoke);
     // Return good frame later
