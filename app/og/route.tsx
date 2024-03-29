@@ -15,20 +15,15 @@ export async function GET(request: Request) {
 
     return new ImageResponse(
         (
-          <div
-          style={{
-            height: '100%',
-            width: '100%',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            backgroundColor: '#fff',
-            fontSize: 32,
-            fontWeight: 600,
-          }}
-        >Hello, ${joke_hash}
-        </div>
+          <div tw="flex h-[1000px] w-[1900px]">
+          <img
+              src={"https://dad-jokes-frames.vercel.app/dadjokes-main.png"}
+              tw="absolute left-0 top-0 h-[1000px]"
+          />
+          <div tw="flex flex-col w-full h-full items-center text-center justify-center">
+              <h2 tw="text-black text-[96px]">{joke_hash}</h2>
+          </div>
+      </div>
         ),
         {
             width: 640,
