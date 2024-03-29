@@ -26,16 +26,20 @@ export const parseFrameRequest = async (request: FrameRequest) => {
     return {fid: fid, isValid: isValid};
 }
 
-export const errorFrame = (imageUrl: string, buttonText: string, apiPath: string, isRedirect = false) => {
+export const createFrame = (imageUrl: string, buttonText: string, apiPath: string, isRedirect = false) => {
     return (`
         <!DOCTYPE html>
         <html>
             <head>
             <meta name="fc:frame" content="vNext">
-            <meta name="fc:frame:image" content="https://privy-frames-demo.vercel.app/error.png">
-            <meta name="fc:frame:post_url" content="${FRAME_BASE_URL}/joke">
-            <meta name="fc:frame:button:1" content="Try Again ?">
-            <meta name="fc:frame:button:1:action" content="post">
+            <meta name="fc:frame:image" content="${imageUrl}">
+            <meta name="fc:frame:post_url" content="${FRAME_BASE_URL}/${apiPath}">
+            <meta name="fc:frame:button:1" content="${buttonText}">
+            <meta name="fc:frame:button:1:action" content="${isRedirect ? 'post_redirect' : 'post'}">
             </head>
         </html>`);
 }
+
+
+export const errorFrame = createFrame('https://privy-frames-demo.vercel.app/error.png', 'Try again?', 'api/wallet');
+
