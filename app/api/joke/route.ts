@@ -17,7 +17,7 @@ export async function POST(req: NextRequest): Promise<Response> {
     const {fid, isValid} = await parseFrameRequest(frameRequest);
     if (!fid || !isValid) return new NextResponse(errorFrame);
 
-    console.debug("Getting a joke request from "+fid);
+    console.debug("Getting a joke request step 1 from "+fid);
     
 
     // Return good frame later
@@ -27,9 +27,9 @@ export async function POST(req: NextRequest): Promise<Response> {
         <head>
         <meta name="fc:frame" content="vNext">
         <meta name="fc:frame:image" content="https://dad-jokes-frames.vercel.app/dadjokes-main.png">
-        <meta name="fc:frame:post_url" content="https://dad-jokes-frames.vercel.app/api/joke_2">
-        <meta name="fc:frame:button:hashxxx" content="Second Part">
-        <meta name="fc:frame:button:hashxxx:action" content="post">
+        <meta name="fc:frame:post_url" content="https://dad-jokes-frames.vercel.app/api/joke/xxxx">
+        <meta name="fc:frame:button:1" content="Second Part">
+        <meta name="fc:frame:button:1:action" content="post">
         </head>
     </html>
 `);
