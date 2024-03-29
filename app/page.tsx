@@ -9,7 +9,7 @@ const frameMetadata = getFrameMetadata({
     }
   ],
   image: `${FRAME_BASE_URL}/dadjokes-main.png`,
-  post_url: `${FRAME_BASE_URL}/api/joke`,
+  post_url: `${FRAME_BASE_URL}api/joke`,
 });
 
 export const metadata: Metadata = {
