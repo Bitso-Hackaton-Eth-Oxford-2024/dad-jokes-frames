@@ -3,6 +3,9 @@ import { ImageResponse } from "next/og";
 export const runtime = "experimental-edge";
 
 export async function GET(request: Request) {
+    const victorMono = await fetch(
+        new URL("/public/VictorMono-Bold.ttf", import.meta.url)
+    ).then((res) => res.arrayBuffer());
 
     const { searchParams } = new URL(request.url);
 
@@ -11,27 +14,32 @@ export async function GET(request: Request) {
     console.debug("Processing Joke with hash "+joke_hash);
 
     return new ImageResponse(
-      (
-        <div
+        (
+          <div
           style={{
-            fontSize: 40,
-            color: 'black',
-            background: 'white',
-            width: '100%',
             height: '100%',
-            padding: '50px 200px',
-            textAlign: 'center',
-            justifyContent: 'center',
+            width: '100%',
+            display: 'flex',
+            flexDirection: 'column',
             alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: '#fff',
+            fontSize: 32,
+            fontWeight: 600,
           }}
-        >
-          👋 Hello
+        >Hello, ${joke_hash}
         </div>
-      ),
-      {
-        width: 640,
-        height: 640,
-      },
+        ),
+        {
+            width: 1900,
+            height: 1000,
+            fonts: [
+                {
+                    name: "VictorMono",
+                    data: victorMono,
+                    weight: 400,
+                },
+            ],
+        }
     );
-  
 }
