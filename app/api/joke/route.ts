@@ -18,8 +18,7 @@ export async function POST(req: NextRequest): Promise<Response> {
     if (!fid || !isValid) return new NextResponse(errorFrame);
 
     console.debug("Getting a joke request from "+fid);
-
-// convert html to svg
+    
 
     // Return good frame later
     return new NextResponse(`
